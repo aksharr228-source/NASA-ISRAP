@@ -1,0 +1,460 @@
+<!--
+  ============================================================
+  ISRAP — NASA / UTSA Research Project Website
+  Single-page static site (HTML + CSS + vanilla JS)
+  ------------------------------------------------------------
+  HOW TO EDIT CONTENT:
+    - Text copy lives inside each section below, clearly
+      labeled with comment banners (e.g. the "TEAM SECTION" banner).
+    - Replace lorem ipsum with real copy in place.
+    - Swap images by replacing files in /assets/images/ (or
+      change the src to your own file). See README.md.
+  ============================================================
+-->
+<!-- NOTE: The doctype/head are shown here for a standalone static host.
+     Fonts are loaded from Google Fonts; everything else is local. -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="ISRAP — a NASA-affiliated UTSA research project mounting air-quality sensors on transit buses to map urban pollution." />
+<title>ISRAP — UTSA / NASA Air Quality Research</title>
+
+<!-- Google Fonts: Sora (headings) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+
+<!-- ============================================================
+     HEADER / STICKY NAVIGATION
+     ============================================================ -->
+<header class="site-header" id="top">
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="#home">
+      <span class="nav__logo" aria-hidden="true">◎</span>
+      <span class="nav__brand-text">ISRAP</span>
+    </a>
+
+    <!-- Hamburger toggle (mobile) -->
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+      <span class="nav__bar"></span>
+    </button>
+
+    <ul class="nav__menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#student-highlights">Student Highlights</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#collaborations">Collaborations</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- ============================================================
+       1. HERO / LANDING  (#home)
+       ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="hero__inner container">
+      <div class="hero__badges" aria-label="Affiliations">
+        <span class="badge">NASA</span>
+        <span class="badge badge--outline">UTSA</span>
+      </div>
+
+      <h1 class="hero__title">NASA ISRAP</h1>
+      <p class="hero__acronym">
+        Multi-scale, Multiplatform Sensing · Machine-Learning Prediction Models ·
+        Visualization Framework · Air Quality Decisions
+      </p>
+      <p class="hero__tagline">Making Earth livable by mapping San Antonio's air, one bus route at a time.</p>
+      <p class="hero__lead">
+        ISRAP is a NASA-affiliated research initiative at UTSA confronting San Antonio's
+        biggest environmental challenge: air pollution. We mount mobile sensing platforms on
+        UTSA buses to measure pollutants like PM2.5, PM10, ozone (O&#8323;), NO&#8322;, and CO
+        in real time across the city. These pollutants are linked to respiratory disease,
+        cancer, and greater vulnerability to infections like the flu. We turn that data into
+        action with machine-learning prediction models built for the SATX community, a
+        visualization framework that makes the data clear, and evidence to guide real
+        air-quality policy decisions.
+      </p>
+
+      <!-- Onboard sensor + GPS payload -->
+      <div class="hero__payload">
+        <span class="hero__payload-label">Onboard sensor payload</span>
+        <ul class="hero__chips">
+          <li>PurpleAir · PM2.5 / PM10</li>
+          <li>Alphasense OX-B431 · O&#8323; + NO&#8322;</li>
+          <li>Alphasense NO2-B43F · O&#8323; + NO&#8322;</li>
+          <li>Alphasense CO-B4 · CO</li>
+          <li>Sensirion SCD40 · CO&#8322;</li>
+          <li>Sensirion SHT45 · Temp / Humidity</li>
+          <li>u-blox NEO-M8N · GPS</li>
+        </ul>
+      </div>
+
+      <div class="hero__actions">
+        <a href="#student-highlights" class="btn btn--primary">Learn More</a>
+        <a href="#research" class="btn btn--ghost">Our Research</a>
+      </div>
+    </div>
+
+    <a href="#student-highlights" class="hero__scroll" aria-label="Scroll to next section">
+      <span class="hero__scroll-chevron" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- ============================================================
+       2. STUDENT HIGHLIGHTS  (#student-highlights)
+       ============================================================ -->
+  <section class="section student" id="student-highlights">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__eyebrow">Student Highlights</span>
+        <h2 class="section__title">Built by students, for the city</h2>
+      </header>
+
+      <div class="student__grid">
+        <!-- Text column -->
+        <div class="student__text reveal">
+          <p>
+            At its core, ISRAP is a student-led effort built around one idea: turn UTSA's
+            transit buses into a moving network of air-quality sensors. The project brings
+            together students from across the university, each contributing the strengths of
+            their own major so the work spans hardware, data, and public health alike.
+          </p>
+
+          <!-- Majors and their roles on the project -->
+          <ul class="student__roles">
+            <li>
+              <strong>Cybersecurity &amp; Data Science:</strong> securing the data pipeline
+              and protecting the pollution data the sensors collect.
+            </li>
+            <li>
+              <strong>Public Health:</strong> interpreting the readings to uncover the real
+              health impact of the pollutants we measure, which can be genuinely harmful.
+            </li>
+            <li>
+              <strong>Mechanical Engineering:</strong> designing the sensor hardware, including
+              the Raspberry Pi enclosure, and mounting the units onto the buses.
+            </li>
+          </ul>
+
+          <p>
+            Every sensor package is assembled and tested in-house before it goes anywhere near
+            a bus. Once validated, the enclosures are mounted on UTSA buses that travel across
+            San Antonio, including the route from the UTSA Main Campus to the UTSA Downtown
+            Campus, collecting live pollution data along the way.
+          </p>
+        </div>
+
+        <!-- Project photos (replace files in /assets/images/ to update) -->
+        <div class="student__media reveal">
+          <figure class="student__fig student__fig--wide">
+            <img src="assets/images/utsa-bus-sensor.jpg"
+                 data-fallback="https://placehold.co/800x450/0C2340/FFFFFF?text=Add+utsa-bus-sensor.jpg"
+                 alt="Air quality sensor on a tripod and GPS antenna mounted on the roof of a UTSA transit bus" />
+            <figcaption>Sensor and GPS mounted on a UTSA bus</figcaption>
+          </figure>
+          <figure class="student__fig">
+            <img src="assets/images/purpleair-sensor.jpg"
+                 data-fallback="https://placehold.co/400x300/F15A22/FFFFFF?text=Add+purpleair-sensor.jpg"
+                 alt="PurpleAir PA-II air quality sensor showing its exterior enclosure and internal laser particle counters" />
+            <figcaption>PurpleAir PA-II particulate sensor</figcaption>
+          </figure>
+          <figure class="student__fig">
+            <img src="assets/images/sensor-testing.jpg"
+                 data-fallback="https://placehold.co/400x300/12385F/FFFFFF?text=Add+sensor-testing.jpg"
+                 alt="Sensor enclosure mounted outdoors overlooking San Antonio during in-house testing" />
+            <figcaption>In-house testing before deployment</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. RESEARCH GOALS & OUTCOMES  (#research)
+       ============================================================ -->
+  <section class="section research section--alt" id="research">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__eyebrow">Research Goals &amp; Outcomes</span>
+        <h2 class="section__title">Hardware and software, working together</h2>
+        <p class="section__intro">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+          ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus.
+        </p>
+      </header>
+
+      <div class="research__grid">
+        <!-- Hardware card -->
+        <article class="card research__card reveal">
+          <div class="card__icon" aria-hidden="true">
+            <!-- chip icon -->
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="6" width="12" height="12" rx="1.5" />
+              <rect x="9" y="9" width="6" height="6" rx="1" />
+              <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" />
+            </svg>
+          </div>
+          <h3 class="card__title">Hardware</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur
+            purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper.
+            Weatherproof sensor enclosures ride on transit buses to sample the air.
+          </p>
+          <p>
+            Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna
+            mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.
+          </p>
+        </article>
+
+        <!-- Software card -->
+        <article class="card research__card reveal">
+          <div class="card__icon" aria-hidden="true">
+            <!-- code brackets icon -->
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 6l-6 6 6 6" />
+              <path d="M16 6l6 6-6 6" />
+              <path d="M13 4l-2 16" />
+            </svg>
+          </div>
+          <h3 class="card__title">Software</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis
+            interdum. A data pipeline ingests, cleans, and geotags readings, then renders them
+            as interactive pollution maps.
+          </p>
+          <p>
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu
+            leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. EVENTS & ACTIVITIES  (#events)
+       ============================================================ -->
+  <section class="section events" id="events">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__eyebrow">Events &amp; Activities</span>
+        <h2 class="section__title">Out in the community</h2>
+      </header>
+
+      <!-- Gallery: each figure opens in the lightbox on click -->
+      <div class="gallery">
+        <figure class="gallery__item reveal">
+          <img src="https://placehold.co/600x450/0C2340/FFFFFF?text=Event+1" alt="Team presenting the project at a community event" />
+          <figcaption>Lorem ipsum dolor sit amet consectetur.</figcaption>
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://placehold.co/600x450/F15A22/FFFFFF?text=Event+2" alt="Sensor demonstration for visiting students" />
+          <figcaption>Praesent commodo cursus magna vel.</figcaption>
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://placehold.co/600x450/12385F/FFFFFF?text=Event+3" alt="Bus fitted with a sensor enclosure at a transit depot" />
+          <figcaption>Vestibulum id ligula porta felis.</figcaption>
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://placehold.co/600x450/0C2340/FFFFFF?text=Event+4" alt="Poster session at a university research symposium" />
+          <figcaption>Nullam quis risus eget urna mollis.</figcaption>
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://placehold.co/600x450/F15A22/FFFFFF?text=Event+5" alt="Workshop with NASA collaborators" />
+          <figcaption>Cras mattis consectetur purus sit.</figcaption>
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="https://placehold.co/600x450/12385F/FFFFFF?text=Event+6" alt="Field data collection along a bus route" />
+          <figcaption>Etiam porta sem malesuada magna.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. TEAM MEMBERS  (#team)
+       ============================================================ -->
+  <section class="section team section--alt" id="team">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__eyebrow">Team Members</span>
+        <h2 class="section__title">The people behind ISRAP</h2>
+      </header>
+
+      <div class="team__grid">
+        <!--
+          Team card template. To add/edit a member, copy one <article> block and change:
+            - the <img> src (photo in /assets/team-members/) and its alt
+            - team__name, team__role, team__bio
+            - the LinkedIn href and aria-label
+        -->
+
+        <!-- Aleksandra (Sasha) Akimova -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/sasha.jpg" alt="Portrait of Aleksandra (Sasha) Akimova" />
+          <h3 class="team__name">Aleksandra (Sasha) Akimova</h3>
+          <p class="team__role">Team Lead · Public Health</p>
+          <p class="team__bio">Senior in Public Health and the project's team lead, studying the correlations between air quality and health disparities across San Antonio to help inform city policy. Fun fact: her favorite animal is beetles.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/aleksandra-akimova-b4a694225" target="_blank" rel="noopener" aria-label="Aleksandra Akimova on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+
+        <!-- Akshar (AK) Patel -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/akshar.jpg" alt="Portrait of Akshar (AK) Patel" />
+          <h3 class="team__name">Akshar (AK) Patel</h3>
+          <p class="team__role">Software Team Lead</p>
+          <p class="team__bio">Cybersecurity student at UTSA with an AI concentration (Class of 2027) and a Research Assistant on NASA ISRAP-AIRMAPS, applying machine learning to air-quality monitoring. His work spans sensor data pipelines and environmental analytics, alongside experience in IT fraud-risk analysis and cloud security.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/akshar-patel-6327aa22a/" target="_blank" rel="noopener" aria-label="Akshar (AK) Patel on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+
+        <!-- Jason Llanes -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/jason.jpg" alt="Portrait of Jason Llanes" />
+          <h3 class="team__name">Jason Llanes</h3>
+          <p class="team__role">Hardware Team Lead</p>
+          <p class="team__bio">Sophomore in Mechanical Engineering leading the hardware side of the project, gaining interdisciplinary experience that will serve his engineering career. Fun fact: he has held a lemur.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/jason-llanes-4b81593a8" target="_blank" rel="noopener" aria-label="Jason Llanes on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+
+        <!-- Illiyan Nathani -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/illiyan.jpg" alt="Portrait of Illiyan Nathani" />
+          <h3 class="team__name">Illiyan Nathani</h3>
+          <p class="team__role">Hardware &amp; Software · Data Science</p>
+          <p class="team__bio">Sophomore in Data Science (Class of 2029) on the hardware and software team, evaluating sensor technologies and helping design the platform that carries them, with his sights set on a PhD. Fun fact: he once ate five plates of biryani in one sitting.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/illiyan-nathani-197031272" target="_blank" rel="noopener" aria-label="Illiyan Nathani on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+
+        <!-- Ethan Avalos -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/ethan.jpg" alt="Portrait of Ethan Avalos" />
+          <h3 class="team__name">Ethan Avalos</h3>
+          <p class="team__role">Hardware · Electrical Engineering</p>
+          <p class="team__bio">Rising junior in Electrical Engineering supporting the hardware behind the project's data collection, expanding skills he'll carry into his engineering career. Fun fact: he ran an unofficial half marathon.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/ejavalos/" target="_blank" rel="noopener" aria-label="Ethan Avalos on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+
+        <!-- Johnny Pollack -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/johnny.jpg" alt="Portrait of Johnny Pollack" />
+          <h3 class="team__name">Johnny Pollack</h3>
+          <p class="team__role">3D Design · Mechanical Engineering</p>
+          <p class="team__bio">Junior in Mechanical Engineering handling the project's 3D design requirements, building skills for future commercial and research projects.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/johnny-pollack-108008a7/" target="_blank" rel="noopener" aria-label="Johnny Pollack on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+
+        <!-- Phi Vu -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/phi.jpg" alt="Portrait of Phi Vu" />
+          <h3 class="team__name">Phi Vu</h3>
+          <p class="team__role">Sensor Housing · Biomedical Engineering</p>
+          <p class="team__bio">Second-year Biomedical Engineering student working on sensor housing design and pollutants research for ISRAP-AIRMAPS, developing hands-on skills in sensor integration and prototyping. Fun fact: he collects figurines.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/phi-vu-70a782381" target="_blank" rel="noopener" aria-label="Phi Vu on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+
+        <!-- Jessie Quintanilla -->
+        <article class="card team__card reveal">
+          <img class="team__avatar" src="assets/team-members/jessie.jpg" alt="Portrait of Jessie Quintanilla" />
+          <h3 class="team__name">Jessie Quintanilla</h3>
+          <p class="team__role">Mechanical Design &amp; Visualization</p>
+          <p class="team__bio">Senior in Mechanical Engineering contributing to both the mechanical design and data visualization teams, from concept to implementation. Fun fact: his grandparents' home in El Salvador sits beside ancient Mayan ruins.</p>
+          <a class="team__linkedin" href="https://www.linkedin.com/in/jessie-quintanilla-440534239/" target="_blank" rel="noopener" aria-label="Jessie Quintanilla on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. COLLABORATIONS  (#collaborations)
+       ============================================================ -->
+  <section class="section collab" id="collaborations">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__eyebrow">Collaborations</span>
+        <h2 class="section__title">Our partners</h2>
+      </header>
+
+      <div class="collab__strip reveal">
+        <div class="collab__item">
+          <img src="https://placehold.co/220x120/FFFFFF/0C2340?text=Organization+One" alt="Logo of Organization One" />
+          <span class="collab__name">Organization One</span>
+        </div>
+        <div class="collab__item">
+          <img src="https://placehold.co/220x120/FFFFFF/0C2340?text=Organization+Two" alt="Logo of Organization Two" />
+          <span class="collab__name">Organization Two</span>
+        </div>
+        <div class="collab__item">
+          <img src="https://placehold.co/220x120/FFFFFF/0C2340?text=Organization+Three" alt="Logo of Organization Three" />
+          <span class="collab__name">Organization Three</span>
+        </div>
+        <div class="collab__item">
+          <img src="https://placehold.co/220x120/FFFFFF/0C2340?text=Organization+Four" alt="Logo of Organization Four" />
+          <span class="collab__name">Organization Four</span>
+        </div>
+        <div class="collab__item">
+          <img src="https://placehold.co/220x120/FFFFFF/0C2340?text=Organization+Five" alt="Logo of Organization Five" />
+          <span class="collab__name">Organization Five</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="nav__logo" aria-hidden="true">◎</span>
+      <span>ISRAP</span>
+    </div>
+    <p class="site-footer__affil">
+      A research project at The University of Texas at San Antonio (UTSA),
+      in affiliation with NASA.
+    </p>
+    <p class="site-footer__copy">© <span id="year"></span> ISRAP · UTSA. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     LIGHTBOX (for the events gallery) — populated by script.js
+     ============================================================ -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
+  <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+  <p class="lightbox__caption" id="lightboxCaption"></p>
+</div>
+
+<script src="script.js"></script>
